@@ -3,6 +3,8 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = policy_scope(Recipe)
+    @recipes = Recipe.all
+    authorize @recipes
   end
 
   def show

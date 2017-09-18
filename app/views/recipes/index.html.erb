@@ -1,0 +1,24 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(https://media.giphy.com/media/H31VnwaffLwmk/giphy.gif)">
+  <div class="banner-content">
+    <h1>Sumimasen</h1>
+    <p>Oishi desu!</p>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="container">
+    <div align="center">
+      <h1>Nos recettes</h1>
+        <ul>
+          <% @recipes.each do |recipe| %>
+            <li style="list-style: none">
+              <%= link_to recipe.title, recipe_path(recipe) %>
+                <% if policy(recipe).update? %>
+                <%= link_to 'delete', recipe_path(recipe), method: :delete %>
+                <%= link_to 'edit', recipe_path(recipe), method: :edit %>
+                <% end %>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
