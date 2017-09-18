@@ -6,11 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-onigiri = Recipe.new(title: "onigiri")
+puts "starts destroying"
+
+Measure.destroy_all
+Tag.destroy_all
+Tool.destroy_all
+Ingredient.destroy_all
+Recipe.destroy_all
+
+puts "starts creating"
+
+
+
+onigiri = Recipe.new(title: "onigiri", servings: 2, instructions: "faire une belle petite boulette en triangle")
 onigiri.save
 
 rice = Ingredient.new(name: "rice")
 rice.save
+
 
 umeboshi = Ingredient.new(name: "umeboshi")
 umeboshi.save
