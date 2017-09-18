@@ -1,13 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
-      <%= simple_form_for @recipe do |f| %>
-        <%= f.input :title, label: false, placeholder: 'Recipe Title' %>
-        <%= f.input :instructions, label: false, placeholder: 'Recipe instructions' %>
-        <%# f.association :ingredient,label: false %>
-        <%= f.input :photos, as: :attachinary %>
-        <%= f.button :submit %>
-      <% end %>
+      <div class="form-wrapper">
+        <%= simple_form_for @recipe do |f| %>
+          <%= f.input :title, label: false, placeholder: 'Recipe Title' %>
+          <%= f.input :instructions, label: false, placeholder: 'Recipe instructions' %>
+          <%= f.association :ingredients,label: false %>
+          <%= f.association :tools,label: false %>
+          <%= f.association :tags,label: false %>
+          <%= f.input :photos, as: :attachinary %>
+          <%= f.button :submit, class: "btn btn-info text-center"%>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
