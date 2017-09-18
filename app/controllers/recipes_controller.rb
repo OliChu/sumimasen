@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = policy_scope(Recipe)
   end
 
   def show
@@ -10,5 +10,5 @@ class RecipesController < ApplicationController
   def recipe_params
   params.require(:recipe).permit(:title, :instructions, :photo)
   end
-  
+
 end
