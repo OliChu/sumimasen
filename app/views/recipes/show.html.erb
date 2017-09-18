@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="recipe-head">
+    <div class="recipe-photo" style="background-image: url('<%= cl_image_path @recipe.photos[0].path, crop: :fill %>');">
+    </div>
+    <div class="recipe-container-infos">
+      <div class="recipe-infos">
+        <div class="recipe-title">
+          <h2><strong><%= @recipe.title %></strong></h2>
+        </div>
+        <div class="recipe-servings">
+          <p><%= @recipe.servings %> pers.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="recipe-ingredients list-unstyled">
+        <ul id="dose-list">
+          <% @recipe.measures.each do |measure| %>
+            <li class="recipe-ingredients__list__item">
+              <div class="ingredients-list__item__icon"> <%= cl_image_tag measure.ingredient.photo,crop: :fit %>
+              </div>
+              <div class="recipe-ingredient-text">
+                <p><%= measure.ingredient.name %></p>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-8">
+      <div class="recipe-instructions">
+        <%= @recipe.instructions%>
+      </div>
+    </div>
+  </div>
+</div>
