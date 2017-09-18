@@ -31,13 +31,9 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.update(recipe_params)
+    @recipe.update(recipe_params)
     authorize @recipe
-    if @recipe.save
-      redirect_to recipe_path(@recipe)
-    else
-      render new
-    end
+    redirect_to recipe_path(@recipe)
   end
 
   def delete
