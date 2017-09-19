@@ -19,10 +19,11 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     authorize @recipe
+    # raise
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
-      render new
+      render 'new'
     end
   end
 
@@ -47,7 +48,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-  params.require(:recipe).permit(:title, :instructions, photos: [])
+  params.require(:recipe).permit(:title, :instructions, :servings, photos: [])
   end
 
 end

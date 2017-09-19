@@ -5,7 +5,7 @@
         <%= simple_form_for @recipe do |f| %>
           <%= f.input :title, label: false, placeholder: 'Recipe Title' %>
           <%= f.input :instructions, label: false, placeholder: 'Recipe instructions' %>
-          <%= f.association :ingredients,label: false %>
+          <%= f.input :servings, label: false, placeholder: 'Nombre de personnes' %>
           <%= f.association :tools,label: false %>
           <%= f.association :tags,label: false %>
           <%= f.input :photos, as: :attachinary %>
