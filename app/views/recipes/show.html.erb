@@ -1,39 +1,50 @@
 <div class="container">
-
-  <div class="recipe-head">
-    <div class="recipe-photo" style="background-image: url('<%= cl_image_path @recipe.photos[0].path, crop: :fill %>');">
-    </div>
-    <div class="recipe-container-infos">
-      <div class="recipe-infos">
-        <div class="recipe-title">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="recipe-photo"> <%= cl_image_tag @recipe.photos[0].path, crop: :fit %></div>
+      <div class="recipe-title">
           <h2><strong><%= @recipe.title %></strong></h2>
-        </div>
-        <div class="recipe-servings">
+      </div>
+      <div class="recipe-servings">
           <p><%= @recipe.servings %> pers.</p>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="recipe-ingredients list-unstyled">
-        <ul id="dose-list">
+      <div class="recipe-tags">
+        <ul>
+          <% @recipe.tags.each do |tag| %>
+            <li>
+              <p><%= tag.name %></p>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="recipe-ingredients">
+        <p><strong>Ingrédients</strong></p>
+        <ul>
           <% @recipe.measures.each do |measure| %>
-            <li class="recipe-ingredients__list__item">
-              <div class="ingredients-list__item__icon"> <%= cl_image_tag measure.ingredient.photo,crop: :fit %>
-              </div>
-              <div class="recipe-ingredient-text">
-                <p><%= measure.ingredient.name %></p>
-              </div>
+            <li>
+              <p><%= measure.ingredient.name %></p>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="recipe-instructions">
+        <p><strong>Instructions</strong></p>
+        <%= @recipe.instructions%>
+      </div>
+      <div class="recipe-tools">
+        <p><strong>Ustensiles</strong></p>
+        <ul>
+          <% @recipe.tools.each do |tool| %>
+            <li>
+                <p><%= tool.name %></p>
             </li>
           <% end %>
         </ul>
       </div>
     </div>
-
-    <div class="col-xs-12 col-sm-8">
-      <div class="recipe-instructions">
-        <%= @recipe.instructions%>
-      </div>
+    <div class="col-xs-6">
     </div>
   </div>
 </div>
+
+
