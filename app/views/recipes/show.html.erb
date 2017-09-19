@@ -22,6 +22,7 @@
         <ul>
           <% @recipe.measures.each do |measure| %>
             <li>
+              <p><%= measure.description %></p>
               <p><%= measure.ingredient.name %></p>
             </li>
           <% end %>
@@ -43,6 +44,9 @@
       </div>
     </div>
     <div class="col-xs-6">
+      <div class="form-inline text-center" id="measure-form-container">
+        <%= render 'measure_form', recipe: @recipe, measure: @measure %>
+      </div>
     </div>
   </div>
 </div>

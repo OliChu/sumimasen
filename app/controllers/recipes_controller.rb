@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @measure = Measure.new
   end
 
   def new
