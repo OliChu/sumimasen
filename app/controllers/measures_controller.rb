@@ -11,13 +11,13 @@ class MeasuresController < ApplicationController
   end
 
   def edit
-  @recipe = Recipe.find(params[:recipe_id])
-  @measure = Measure.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @measure = Measure.find(params[:id])
   end
 
   def update
-   @measure= Measure.update(measure_params)
-   redirect_to recipe_path(@recipe)
+    @measure= Measure.update(measure_params)
+    redirect_to recipe_path(@recipe)
   end
 
   def destroy
