@@ -8,18 +8,11 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @measure = Measure.new
   end
 
   def new
-    @ingredient = Ingredient.new
-    @measure = Measure.new
-    @tool = Tool.new
-    @tag = Tag.new
     @recipe = Recipe.new
-    authorize @ingredient
-    authorize @measure
-    authorize @tool
-    authorize @tag
     authorize @recipe
   end
 
