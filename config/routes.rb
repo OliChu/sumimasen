@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :recipes
+  resources :recipes do
+    resources :measures, only: [:new, :create, :edit, :update, :destroy]
+    resources :ingredients, only: [:new, :create, :edit, :update, :destroy]
+    resources :tags, only: [:new, :create, :edit, :update, :destroy]
+    resources :tools, only: [:new, :create, :edit, :update, :destroy]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
