@@ -1,6 +1,5 @@
 class MeasuresController < ApplicationController
   def create
-    raise
     @measure = Measure.new(measure_params)
     @recipe = Recipe.find(params[:recipe_id])
     @measure.recipe = @recipe

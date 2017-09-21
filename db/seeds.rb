@@ -34,12 +34,12 @@ vegan.save
 oishi = Tag.new(name: "oishi")
 oishi.save
 
-measure1 = Measure.new(description: "1 boulette de")
+measure1 = Measure.new(quantity: 1, text_1: " boulette de ", text_2: " gluant")
 measure1.ingredient = rice
 measure1.recipe = onigiri
 measure1.save
 
-measure2 = Measure.new(description: "1 boulette de")
+measure2 = Measure.new(quantity: 1, text_1: " boulette de ", text_2: " gluant")
 measure2.ingredient = umeboshi
 measure2.recipe = onigiri
 measure2.save
@@ -57,3 +57,4 @@ onigiri.tags << vegan
 onigiri.tags << oishi
 onigiri.save
 
+oli = User.create(email: "a@a.a", password: "azerty", admin: true)
