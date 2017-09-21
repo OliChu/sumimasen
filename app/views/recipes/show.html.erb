@@ -21,9 +21,7 @@
         <p><strong>Ingrédients</strong></p>
         <ul id="measure-list">
           <% @recipe.measures.each do |measure| %>
-            <li>
-              <p><%= measure.description %></p> <p><%= measure.ingredient.name %></p>
-            </li>
+            <li><p><%= measure.quantity %><%= measure.text_1 %><%= measure.ingredient.name %><%= measure.text_2 %></p></li>
           <% end %>
         </ul>
       </div>

@@ -1,5 +1,6 @@
 class MeasuresController < ApplicationController
   def create
+    raise
     @measure = Measure.new(measure_params)
     @recipe = Recipe.find(params[:recipe_id])
     @measure.recipe = @recipe
@@ -30,6 +31,6 @@ class MeasuresController < ApplicationController
   private
 
   def measure_params
-    params.require(:measure).permit(:description, :ingredient_id)
+    params.require(:measure).permit(:quantity, :text_1, :ingredient_id, :text_2)
   end
 end
