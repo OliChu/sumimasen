@@ -1,0 +1,4 @@
+<%= simple_form_for(@tag, remote: true, method: 'post') do |f| %>
+  <%= f.input :name, label: false, placeholder: "Nom du tag" %>
+  <%= f.submit "Créer", class: "btn btn-info" %>
+<% end %>

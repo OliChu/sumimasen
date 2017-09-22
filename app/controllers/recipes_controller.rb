@@ -9,6 +9,9 @@ class RecipesController < ApplicationController
 
   def show
     @measure = Measure.new
+    @ingredient = Ingredient.new
+    @tag = Tag.new
+    @tool = Tool.new
   end
 
   def new

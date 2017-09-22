@@ -1,5 +1,5 @@
 class Measure < ApplicationRecord
   belongs_to :ingredient
   belongs_to :recipe
-  validates :description, presence: true
+  validates :text_1, presence: true
 end

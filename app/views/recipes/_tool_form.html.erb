@@ -1,0 +1,4 @@
+<%= simple_form_for(@tool, remote: true, method: 'post') do |f| %>
+  <%= f.input :name, label: false, placeholder: "Nom de l'ustensile" %>
+  <%= f.submit "Créer", class: "btn btn-info" %>
+<% end %>

@@ -38,12 +38,12 @@ ActiveRecord::Schema.define(version: 20170921193427) do
   end
 
   create_table "measures", force: :cascade do |t|
-    t.string   "description"
+    t.string   "text_1"
     t.integer  "ingredient_id"
     t.integer  "recipe_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "complement"
+    t.string   "text_2"
     t.integer  "quantity"
     t.index ["ingredient_id"], name: "index_measures_on_ingredient_id", using: :btree
     t.index ["recipe_id"], name: "index_measures_on_recipe_id", using: :btree
