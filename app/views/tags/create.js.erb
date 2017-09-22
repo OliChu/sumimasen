@@ -1,0 +1,5 @@
+<% if @tag.errors.any? %>
+  // Render new tag form with errors
+  const container = document.querySelector('#tag-form-container');
+  container.innerHTML = '<%= j render "recipes/tag_form", recipe: @recipe, tag: @tag %>'
+<% end %>
