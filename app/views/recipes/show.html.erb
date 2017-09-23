@@ -14,9 +14,8 @@
         <p><strong>Tags</strong></p>
         <% if current_user && current_user.admin %>
           <div class="form-inline" id="tag-form-container">
-            <p>Créer Tag</p>
+            <p>Ajouter Tag</p>
             <%= render 'tag_form' %>
-          </div>
         <% end %>
         <ul id="tag-list">
           <% @recipe.tags.each do |tag| %>
