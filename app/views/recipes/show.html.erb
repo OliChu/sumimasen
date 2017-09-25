@@ -14,7 +14,6 @@
         <p><strong>Tags</strong></p>
         <% if current_user && current_user.admin %>
           <div class="form-inline" id="tag-form-container">
-            <p>Ajouter Tag</p>
             <%= render 'tag_form' %>
         <% end %>
         <ul id="tag-list">
@@ -29,11 +28,9 @@
         <p><strong>Ingrédients</strong></p>
         <% if current_user && current_user.admin %>
           <div class="form-inline" id="measure-form-container">
-            <p>Ajouter Mesure</p>
             <%= render 'measure_form', recipe: @recipe, measure: @measure %>
           </div>
           <div class="form-inline" id="ingredient-form-container">
-            <p>Créer Ingredient</p>
             <%= render 'ingredient_form', ingredient: @ingredient %>
           </div>
         <% end %>
@@ -52,11 +49,10 @@
         <p><strong>Ustensiles</strong></p>
         <% if current_user && current_user.admin %>
           <div class="form-inline" id="tool-form-container">
-            <p>Nouvel ustensile</p>
             <%= render 'tool_form' %>
           </div>
         <% end %>
-        <ul>
+        <ul id="tool-list">
           <% @recipe.tools.each do |tool| %>
             <li>
               <p><%= tool.name %></p>

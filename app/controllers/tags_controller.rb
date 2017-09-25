@@ -3,13 +3,13 @@ class TagsController < ApplicationController
     @tag = Tag.find_or_create_by(tag_params)
     authorize @tag
     @tag.save
-    unless recipe_params == {}
-      @recipe = Recipe.find(recipe_params[:recipe_id])
-      unless @recipe.tags.include?(@tag)
-        @recipe.tags << @tag
-        authorize @recipe
-        @recipe.save
-      end
+    @update = false
+    @recipe = Recipe.find(recipe_params[:recipe_id])
+    unless @recipe.tags.include?(@tag)
+      @recipe.tags << @tag
+      authorize @recipe
+      @recipe.save
+      @update = true
     end
     respond_to do |format|
       format.js  # <-- will render `app/views/tags/create.js.erb`
