@@ -13,7 +13,6 @@ gem 'cloudinary'
 gem "attachinary"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
-gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 
 gem 'autoprefixer-rails'
