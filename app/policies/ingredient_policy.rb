@@ -13,6 +13,14 @@ class IngredientPolicy < ApplicationPolicy
     user.admin? # Only an admin can update a Recipe
   end
 
+  def index?
+    user.admin? # Only an admin can update a Recipe
+  end
+
+  def show?
+    user.admin? # Only an admin can update a Recipe
+  end
+
   def destroy?
     user.admin? # Only an admin can delete a Recipe
   end

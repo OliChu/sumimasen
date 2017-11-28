@@ -3,8 +3,8 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = policy_scope(Recipe)
+    authorize @recipe
     @recipes = Recipe.all
-    authorize @recipes
   end
 
   def show
@@ -31,23 +31,24 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    authorize @recipe
+
   end
 
   def update
     @recipe.update(recipe_params)
-    authorize @recipe
     redirect_to recipe_path(@recipe)
   end
 
-  def delete
-    authorize @recipe
+  def destroy
+    @recipe.destroy
+    redirect_to recipes_path
   end
 
   private
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+    authorize @recipe
   end
 
   def recipe_params

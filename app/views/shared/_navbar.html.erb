@@ -14,7 +14,10 @@
 
       <% if current_user.admin %>
         <%= link_to "Admin Dashboard", rails_admin_path, class: "navbar-item navbar-link" %>
-        <%= link_to "Ajouter une recette", new_recipe_path, class: "navbar-item navbar-link" %>
+        <%= link_to "Recettes", recipes_path, class: "navbar-item navbar-link" %>
+        <%= link_to "Ingrédients", ingredients_path, class: "navbar-item navbar-link" %>
+        <%= link_to "Tools", tools_path, class: "navbar-item navbar-link" %>
+
       <% end %>
 
       <!-- Avatar with dropdown menu -->

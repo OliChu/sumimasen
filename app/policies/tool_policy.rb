@@ -16,4 +16,8 @@ class ToolPolicy < ApplicationPolicy
   def destroy?
     user.admin? # Only an admin can delete a Recipe
   end
+
+   def index?
+    user.admin? # Only an admin can delete a Recipe
+  end
 end

@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  before_action :set_tool, only: [:destroy]
   def create
     @tag = Tag.find_or_create_by(tag_params)
     authorize @tag
@@ -16,7 +17,17 @@ class TagsController < ApplicationController
     end
   end
 
+  def destroy
+    @tag.destroy
+    redirect_to tags_path
+  end
+
   private
+
+  def set_tag
+    @tag = Tag.find(params[:id])
+    authorize @tag
+  end
 
   def tag_params
     params.require(:tag).permit(:name)

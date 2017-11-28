@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :measures, only: [:new, :create, :edit, :update, :destroy]
   end
 
-  resources :tools, only: [:new, :create, :edit, :update, :destroy]
+  resources :tools
   resources :tags, only: [:new, :create, :edit, :update, :destroy]
-  resources :ingredients, only: [:new, :create, :edit, :update, :destroy]
+  resources :ingredients
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
