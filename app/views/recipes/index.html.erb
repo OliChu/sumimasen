@@ -2,6 +2,7 @@
 <div class="wrapper">
   <div class="container">
     <div align="center">
+      <%= link_to 'Ajouter recette', new_recipe_path %>
       <h1>Nos recettes</h1>
         <ul>
           <% @recipes.each do |recipe| %>
